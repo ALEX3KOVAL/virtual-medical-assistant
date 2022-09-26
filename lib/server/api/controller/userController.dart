@@ -12,7 +12,8 @@ Future<bool> registration(String userName, String password, {String email = "", 
     else {
       resultMap["email"] = email;
     }
-    (await DBUserController.instance()).add(resultMap);
+    //await DBUserController.create()
+    DBUserController.instance.add(resultMap);
     return true;
   }
   catch(e) {
@@ -21,8 +22,10 @@ Future<bool> registration(String userName, String password, {String email = "", 
   }
 }
 
-void login(String userName, String password, {String email = "", String phoneNumber = ""}) {
+void login(String password, {String userName = "", String email = "", String phoneNumber = ""}) {
+  if (userName.isNotEmpty) {
 
+  }
 }
 
 void check(String userName, String password, {String email = "", String phoneNumber = ""}) {
