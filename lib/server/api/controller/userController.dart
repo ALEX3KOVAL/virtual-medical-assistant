@@ -12,6 +12,7 @@ Future<bool> registration(String userName, String password, {String email = "", 
     else {
       resultMap["email"] = email;
     }
+
     //await DBUserController.create()
     DBUserController.instance.add(resultMap);
     return true;
